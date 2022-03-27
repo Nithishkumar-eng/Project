@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <style>
+       body{
+           margin: 0;
+           background-image: linear-gradient(to right,rgb(229, 172, 236),rgba(230, 101, 150, 0.712));
+       }
+    
+        .item{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        label{
+            
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        input,textarea,select{
+            width: 100%;
+            border: 0;
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            padding: 8px;
+        }
+        .header{
+            text-align: center;
+            font-weight: 400;
+            padding: 5px 2px;
+            color: white;
+            background-color:rgb(6, 48, 88);
+            padding: 4px 2px;
+        }
+        button{
+            border: 0;
+            outline: 0;
+            width: 40%;
+            border-radius: 4px;
+            padding: 12px 8px ;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: rgb(6, 68, 6);
+            color: white;
+            font-weight: bold;
+        }
+        #reset{
+            border: 0;
+            outline: 0;
+            border-radius: 4px;
+            padding: 12px 8px ;
+            cursor: pointer;
+            background-color: rgb(69, 70, 69);
+            color: white;
+            font-weight: bold;
+        }
+        .message{
+            display: none;
+            text-align: center;
+            color: rgb(36, 148, 36);
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h4 class="message"></h4>
+    <div class="container">
+        <h2 class="header">Register</h2><br>
+        <form action="#" id="myForm"> 
+            <table align="center" cellpadding="10">
+                <tr>
+                    <td><label for="register">Register number</label></td>
+                    <td><input placeholder="Enter your register number" required type="text" name="register" id="register"></td>
+                </tr>
+                <tr>
+                    <td><label for="roll">Roll number</label></td>
+                    <td><input placeholder="Enter your roll number" required type="text" name="roll" id="roll"></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Name</label></td>
+                    <td><input placeholder="Enter your full name" required type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="programme">Programme</label></td>
+                    <td><input required type="text" name="programme" id="programme" value="B.E"></td>
+                </tr>
+                <tr>
+                    <td><label for="department">Department</label></td>
+                    <td><input placeholder="Enter your Department" required type="text" name="department" id="department"></td>
+                </tr>
+                <tr>
+                    <td><label for="regulation">Regulation</label></td>
+                    <td><input placeholder="Enter your Regulation" required type="text" name="regulation" id="regulation"></td>
+                </tr>
+                <tr>
+                    <td><label for="year">Year of join</label></td>
+                    <td><input placeholder="Enter your Year of Joining" required type="number" name="year" id="year"></td>
+                </tr>
+                <tr>
+                    <td><label for="yearOfStudy">Year of Study</label></td>
+                    <td><select name="yearOfStudy" id="yearOfStudy"><option></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></td>                
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</label></td>
+                    <td><select name="gender" id="gender"><option>Select Gender</option><option value="male">Male</option><option value="female">Female</option></select></td>
+                    
+                </tr>
+                
+                <tr>
+                    <td><label for="dob">Date of birth</label></td>
+                    <td><input required type="date" name="dob" id="dob"></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone Number</label></td>
+                    <td><input placeholder="Enter your Mobile number" required type="number" name="phone" id="phone"></td>
+                </tr>
+                <tr>
+                    <td><label for="mail">Mail</label></td>
+                    <td><input placeholder="Enter your Mail ID" required type="text" name="mail" id="mail"></td>
+                </tr>
+                <tr>
+                    <td><label for="parentName">Parent Name</label></td>
+                    <td><input placeholder="Enter your  parent name" required type="text" name="parentName" id="parentName"></td>
+                </tr>
+                <tr>
+                    <td><label for="parentNumber">Parent Number</label></td>
+                    <td><input placeholder="Enter your parent mobile number" required type="number" name="parentNumber" id="parentNumber"></td>
+                </tr>
+                <tr>
+                    <td><label for="Community">Community</label></td>
+                    <td><input placeholder="Enter your Community" required type="text" name="Community" id="Community"></td>
+                </tr>
+                <tr>
+                    <td><label for="10th">10th Percentage</label></td>
+                    <td><input placeholder="Enter your 10th Percentage" required type="number" name="tenth" id="10th"></td>
+                </tr>
+                <tr>
+                    <td><label for="12th">12th Percentage</label></td>
+                    <td><input placeholder="Enter your 12th Percentage" required type="number" name="twelth" id="12th"></td>
+                </tr>
+                <tr>
+                    <td><label for="cgpa">CGPA</label></td>
+                    <td><input placeholder="Enter your current CGPA" required type="number" name="cgpa" id="cgpa"></td>
+                </tr>
+                <tr>
+                    <td><label for="standingArrear">Standing Arrears</label></td>
+                    <td><input placeholder="Enter number of arrears" required type="number" name="standingArrear" id="standingArrear"></td>
+                </tr>
+                <tr>
+                    <td><label for="historyOfArrear">History Of Arrear</label></td>
+                    <td><select name="historyOfArrear" id="historyOfArrear"><option></option><option value="Yes">Yes</option><option value="No">No</option></select></td>
+                    
+                </tr>
+                <tr>
+                    <td><label for="bloodGroup">Blood Group</label></td>
+                    <td><input placeholder="Enter your Blood Group" required type="text" name="bloodGroup" id="bloodGroup"></td>
+                </tr>
+                <tr>
+                    <td><label for="aadharNumber">Aadhar Number</label></td>
+                    <td><input placeholder="Enter your Aadhar Number" required type="text" name="aadharNumber" id="aadharNumber"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address</label></td>
+                    <td><textarea name="address" placeholder="Enter your permanent address" id="address" cols="25" rows="5"></textarea></td>
+                </tr>
+                <tr >              
+                    <td></td>
+                    <td><button type="submit" id="btn" >Register</button>&nbsp;<button type="reset" id="reset">Reset</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+<!--name,programme,dept,regulation,year of join,gender,regno,rollno,dob,phn no,mail,parent name,phone num,10th 12th % cgpa,blood group.aadhar,address-->
+
+    <script>
+        
+        // document.getElementById('btn').addEventListener('click',function func(e){
+        //     e.preventDefault();
+        //     let name = document.getElementById('name').value;
+        //     let programme = document.getElementById('programme').value;
+        //     let department = document.getElementById('department').value;
+        //     let regulation = document.getElementById('regulation').value;
+        //     let year= document.getElementById('year').value;
+        //     let yearOfStudy = document.getElementById('yearOfStudy').value;
+        //     let gender = document.getElementById('gender').value;
+        //     let register = document.getElementById('register').value;
+        //     let roll = document.getElementById('roll').value;
+        //     let dob = document.getElementById('dob').value;
+        //     let phone = document.getElementById('phone').value;
+        //     let mail = document.getElementById('mail').value;
+        //     let parentName = document.getElementById('parentName').value;
+        //     let parentNumber = document.getElementById('parentNumber').value;
+        //     let Community = document.getElementById('Community').value;
+        //     let tenth = document.getElementById('10th').value;
+        //     let twelth = document.getElementById('12th').value;
+        //     let cgpa = document.getElementById('cgpa').value;
+        //     let bloodGroup = document.getElementById('bloodGroup').value;
+        //     let aadharNumber = document.getElementById('aadharNumber').value;
+        //     let address = document.getElementById('address').value;
+        //     let standingArrear = document.getElementById('standingArrear').value;
+        //     let historyOfArrear = document.getElementById('historyOfArrear').value;
+        //     const obj= {RegNo:register,RollNo:roll,Name:name,Programme:programme,Department:department,Regulation:regulation,YearOfJoining:year,YearOfStudy:yearOfStudy ,Gender:gender,Date_of_birth:dob,BloodGroup:bloodGroup,MobileNumber:phone,MailID:mail,ParentName:parentName,ParentMobile:parentNumber,tenth_Percent:tenth,twelth_Percent:twelth,CGPA:cgpa,StandingArrears:standingArrear,HistoryOfArrears:historyOfArrear, AadharNumber:aadharNumber,Address:address};
+            
+        //     let js = JSON.stringify(obj);
+        //     console.log(js);
+            
+        // })
+        
+        let form = document.getElementById('myForm').addEventListener('submit',function(event){
+                event.preventDefault();
+                let div = document.querySelector('.message');
+                let body = document.querySelector('body');
+                let container = document.querySelector('.container');                
+                body.style.backgroundImage="none";
+                container.style.display="none";
+                div.style.display="block";
+                let txt ="Your details has been submitted successfully";
+                div.innerHTML= txt;
+        })
+        
+    </script>
+</body>
+</html>

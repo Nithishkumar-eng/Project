@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgb(241, 89, 195), rgb(61, 64, 207))
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            position: absolute;
+            top: 18%;
+            right: 35%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.856);
+            border-radius: 8px;
+            padding: 32px 8px;
+            align-content: space-around;
+        }
+        label{
+            width: 100%;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        input{
+            width: 250px;
+            padding: 12px 6px;
+            color:rgb(38, 79, 194) ;
+            border: 0;
+            outline: 0;
+            border-bottom: 1px solid rgba(50, 34, 219, 0.952);
+        }
+        .txtbox{
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        #show{
+            width: auto;
+        }
+        h2{
+            color: rgb(26, 64, 168);
+            margin-left: 20px;
+        }
+        .btn{
+            text-align: center;
+            padding:12px 4px;
+        }
+        button{
+            width: 100%;
+            padding: 8px 16px;
+            border: 0;
+            border-radius: 20px;
+            outline: 0;
+            color: white;
+            font-weight: bold;
+            background-color: rgb(38, 79, 194);
+        }
+        i{
+            width: 12px;
+            height: 10px;
+            margin-right: 5px;
+            float: left;
+            padding:0px 6px;
+            color: rgb(55, 133, 206);
+        }
+        .showPassword{
+            margin-left: 8px;
+        }
+        .message{
+            display: none;
+            text-align: center;
+            color: rgb(36, 148, 36);
+            font-size: 24px;
+        }
+        @media only screen and (max-width:500px){
+            .container{
+                position: absolute;
+                left: 8%;
+               
+                top: 20%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h4 class="message">    </h4>
+    <form action="#" id="myForm">
+        
+        <div class="container">
+            <h2>Sign Up</h2>
+            <div class="txtbox">
+                <b><i class="material-icons">person</i><label for="e-mail">E-MAIL ID</label>  </b>            
+                <input required type="email" name="e-mail" id="e-mail" placeholder="Enter your e-mail id">
+            </div>
+            <div class="txtbox">
+                <b><i class="material-icons">https</i><label for="CreatePassword">CREATE PASSWORD</label></b>             
+                <input required type="password" name="CreatePassword" id="CreatePassword" placeholder="Enter your password">
+            </div>
+            <div class="txtbox">
+                <b><i class="material-icons">https</i><label for="ConfirmPassword">CONFIRM PASSWORD</label></b>
+                <input required type="password" id="ConfirmPassword" placeholder="Enter your Confirm password">
+            </div>
+            
+            <div class="showPassword" style="margin-top: 5px;">
+                <input onclick="checkbox()" type="checkbox" name="show" id="show"><label for="show">Show password</label>
+            </div>
+            <div class="btn">
+                <button type="submit" id="btn">Sign Up</button>
+            </div>
+            
+        </div>
+    </form>
+    
+    <script>
+        function checkbox(){
+            let checkbox= document.getElementById('show');
+            let input1= document.getElementById('CreatePassword');
+            let input2= document.getElementById('ConfirmPassword');
+            if(checkbox.checked==true){
+                input1.type="text";
+                input2.type="text";
+            }
+            else{
+                input1.type="password";
+                input2.type="password";
+            }
+        }       
+        let form = document.getElementById('myForm').addEventListener('submit', function(event){
+                event.preventDefault();
+                let div = document.querySelector('.message');
+                let body = document.querySelector('body');
+                let container = document.querySelector('.container');
+                
+                body.style.backgroundImage="none";
+                container.style.display="none";
+                div.style.display="block";
+                let txt ="Account has been created successfully";
+                div.innerHTML= txt;
+        })
+    </script>
+</body>
+</html>

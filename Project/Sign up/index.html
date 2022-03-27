@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body{
+            background-image: linear-gradient(to left, rgba(15, 33, 134, 0.473), rgb(28, 31, 197))
+        }
+        h2{
+            text-align: center;
+        }
+        .container{
+            position: absolute;
+            border-radius: 5px;
+            width: 300px;
+            top: 35%;
+            left: 40%;
+            background-color: white;
+            padding: 20px 30px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.856);
+        }
+        label{
+            
+            width: 100%;
+            padding: 5px opx;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        input{
+            width: 90%;
+            border: none;
+            padding:  7px;
+            outline: 0 ;
+            border-bottom: 1px solid rgba(11, 5, 85, 0.952);
+        }
+        button{
+            padding: 8px 14px ;
+            width: 100%;
+            font-size: large;
+            margin-top: 10px;
+            font-weight: bold;
+            color: white;
+            outline: 0;
+            border: 0;
+            border-radius: 18px;
+            background-color: rgba(2, 7, 70, 0.945);
+        }
+        #show{
+            width: auto;
+        }
+        i{
+            width: 20px;
+            float: left;
+            padding:0px 4px;
+            color: rgb(48, 46, 46);
+        }
+        @media only screen and (max-width:400px){
+            .container{
+                position: absolute;
+                left: 5%;
+                top: 20%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#">
+            <h2>User Login</h2>
+            <div>
+                <b><i class="material-icons">person</i><label for="uname">Username</label></b><br>
+                <input type="text" id="uname">
+            </div>
+            <div>
+                <b><i class="material-icons">key</i><label for="psw">Password</label></b>               
+                <input type="password" name="psw" id="psw">
+            </div>
+            <div style="margin-top: 5px;">
+                <input onclick="checkbox()" type="checkbox" name="show" id="show"><label for="show">Show password</label>
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        function checkbox(){
+            let checkbox= document.getElementById('show');
+            let input= document.getElementById('psw');
+            if(checkbox.checked==true){
+                input.type="text";
+            }
+            else{
+                input.type="password";
+            }
+            
+        }
+        
+
+    </script>
+</body>
+</html>
