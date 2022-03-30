@@ -6,29 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Record</title>
     <style>
-        *{
-            margin: 0;
-        }
         table{
-            border: 1px solid black;
-            color: white;
-            background-color: rgb(3, 31, 21);
+            height: 50%;
+            width: 100%;
+            overflow: scroll;
         }
-        tr{
-            border: 5px solid rgb(73, 72, 72);
-            margin: 0;
+        table,th,td{
+            border: 1px solid black;
+            color: black;
+            border-collapse: collapse;
+            text-align: center;
+            
         }
         th,td{
-            margin: 0;
-            border:2px solid rgb(97, 95, 95);
-            padding: 8px 12px;
-            text-align: center;
+            padding: 8px 16px;
+        }
+        th{
+            background-color: azure;
+        }
+        td{
+            font-weight: 500;
+        }
+        tr:nth-child(even){
+            background-color:#f2f2f2;
+        }
+        .filter{
+            text-align: end;
+            padding: 6px 2px;
+        
+        }
+        .filter select{
+            padding: 6px;
+        }
+        .container{
+            height: 450px;
+            overflow: scroll;
+        }
+        .selector{
+            padding: 6px 4px;
+            border: 0;
+            outline: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-radius: 5px;
+            background-color: rgb(6, 80, 6);
+            color: white;
             font-weight: bold;
+            cursor: pointer;
+        }
+        option{
+            background-color: rgba(6, 80, 6, 0.582);
+        }
+        h2{
+            text-align: center;
+            color: maroon;
         }
     </style>
 </head>
 <body>
-    <table>
+    <h2>Student's Record</h2>
+    <div class="filter">
+        <select class="selector" name="year" id="year"  onchange="yearSortFunction()">
+            <option label="Sort By Year" value="ALL" selected>Sort By Year</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="ALL"> Select All</option>
+        </select>
+        <select class="selector" name="dept" id="dept" onchange="yearSortFunction()">
+            <option value="ALL" >Sort By Department</option>
+            <option value="MECH">MECH</option>
+            <option value="EEE">EEE</option>
+            <option value="ECE">ECE</option>
+            <option value="CSE">CSE</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ALL"> Select All</option>
+        </select>
+    </div>
+    <div class="container">
+    <table id="myTable">
         <tr>
             <th colspan="3">Register Number</th>
             <th>Roll Number</th>
@@ -57,18 +112,243 @@
         <tr>
             <td colspan="3">1814032</td>
             <td>18EC032</td>
-            <td>Nithishkumar</td>
+            <td>StudentName 1</td>
             <td>B.E</td>
-            <td>ECE</td>
+            <td class="dept">ECE</td>
             <td>2015</td>
             <td>2018</td>
-            <td>4</td>
+            <td class="year">4</td>
             <td>Male</td>
-            <td class="dob">24-05-2001</td>
+            <td class="dob"> mm dd,yyyy</td>
             <td>B+</td>
             <td>992223332</td>
             <td>sample@gmail.com</td>
-            <td>pazhani</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814032</td>
+            <td>18EC032</td>
+            <td>StudentName 2</td>
+            <td>B.E</td>
+            <td class="dept">CSE</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">4</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814030</td>
+            <td>18EC030</td>
+            <td>StudentName 3</td>
+            <td>B.E</td>
+            <td class="dept">ECE</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">3</td>
+            <td>Male</td>
+            <td class="dob"> mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814032</td>
+            <td>18EC032</td>
+            <td>StudentName 2</td>
+            <td>B.E</td>
+            <td class="dept">CSE</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">2</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814032</td>
+            <td>18EC032</td>
+            <td>StudentName 2</td>
+            <td>B.E</td>
+            <td class="dept">CIVIL</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">4</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814032</td>
+            <td>18EC032</td>
+            <td>StudentName 2</td>
+            <td>B.E</td>
+            <td class="dept">MECH</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">3</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814032</td>
+            <td>18EC024</td>
+            <td>StudentName 7</td>
+            <td>B.E</td>
+            <td class="dept">EEE</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">4</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814047</td>
+            <td>18EC032</td>
+            <td>StudentName 8</td>
+            <td>B.E</td>
+            <td class="dept">CIVIL</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">3</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814047</td>
+            <td>18EC032</td>
+            <td>StudentName 8</td>
+            <td>B.E</td>
+            <td class="dept">EEE</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">3</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
+            <td>887776655</td>
+            <td>AAA</td>
+            <td>90</td>
+            <td>90</td>
+            <td>8</td>
+            <td>0</td>
+            <td>no</td>
+            <td>223344556677</td>
+            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
+        </tr>
+        <tr>
+            <td colspan="3">1814047</td>
+            <td>18EC032</td>
+            <td>StudentName 8</td>
+            <td>B.E</td>
+            <td class="dept">ECE</td>
+            <td>2015</td>
+            <td>2018</td>
+            <td class="year">2</td>
+            <td>Male</td>
+            <td class="dob">mm dd,yyyy</td>
+            <td>B+</td>
+            <td>992223332</td>
+            <td>sample@gmail.com</td>
+            <td>father name</td>
             <td>887776655</td>
             <td>AAA</td>
             <td>90</td>
@@ -80,5 +360,65 @@
             <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
         </tr>
     </table>
+    </div>
+    <script>
+        function yearSortFunction() {
+          // Declare variables
+          
+          var filter,filter2, table, tr, td,td2, i, txtValue,txtValue2;
+          filter = document.getElementById("year").value.toUpperCase();
+          filter2= document.getElementById("dept").value.toUpperCase();
+          table = document.getElementById("myTable");
+          
+          tr = table.getElementsByTagName("tr");
+          console.log(filter, filter2);
+         // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByClassName("year")[0];
+                td2 = tr[i].getElementsByClassName("dept")[0];
+                if(td){
+                    txtValue= td.textContent;
+                    txtValue2= td2.textContent;
+                    if((txtValue==filter || filter=="ALL") && (txtValue2==filter2 || filter2=="ALL")){
+                        tr[i].style.display="";
+                    }
+                    else{
+                        tr[i].style.display="none";
+                    }    
+                }
+                
+            }
+        }
+        function deptSortFunction(){
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("dept");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+            console.log("NEW LINE");
+          // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByClassName("dept")[0];
+                if (td) {
+                    txtValue = td.textContent;
+                   
+                    if (txtValue== filter) {
+                        console.log("If executed")
+                        console.log("txtvalue="+txtValue+" filter="+filter)
+                        tr[i].style.display = "";
+                    }                   
+                    else{
+                        console.log("Else executed");
+                        console.log("txtvalue="+txtValue+" filter="+filter)
+                        tr[i].style.display = "none";
+                    }                    
+                }
+                if(filter=="ALL"){
+                    tr[i].style.display = "";
+                }
+            }
+        }
+    </script>
+        
 </body>
 </html>
