@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="./style2.css">
+</head>
+<body  onload="myfunction()">
+    <div class="container">
+        <div class="img-container">
+            <img class="logo" src="./Images/ACGCET-New.png" alt="accet logo">
+        </div> 
+        <div class="buttons-container">
+            <div class="admin-btn">
+                <button class="btn">Login As Admin</button>
+            </div>
+            <div class="student-btn" >
+                <button class="btn">Login As Student</button>   
+            </div>
+        </div>        
+    </div>
+   <div class="body">
+
+   
+    <marquee  direction="left" height="100px" behavior="scroll" scrollamount="12">Upcoming drives</marquee>
+    
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          
+            <img  class="carousel" src="./Images/meeting.jpg" style="width:100%">
+            
+          </div>
+        <div class="mySlides fade">
+          
+          <img class="carousel" src="Images/accet.jpeg" style="width:100%">
+          
+        </div>
+        
+        
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        <br>
+        
+        <div class="content-container">
+            <div class="content">
+                <h3>Training cell</h3>
+            </div>
+            
+            <div class="content">
+                Our college boasts of a strong training and placement cell knitted together effectively by a placement officer, a placement coordinator, a group of experienced faculties of various departments, the corporate world and the Alumni. The mission of providing placement opportunities to the students of all departments without posing a burden of working towards it is achieved through effective and excellent training facilities to students from the first year itself.
+            </div>
+            <div class="content">
+                A structured framework which serves as the backbone of the training process ensures that students are placed in their fields of interest after a meticulous training process incorporated within the curriculum . The cell helps to provide a continuous and gradual training process which transforms a student admitted with average technical and soft skills into a competent professional ready to face the challenges posed by the industrial recruitment process and succeed confidently.
+            </div>
+            <div class="content">
+                Once the students needs are identified and categorised, the placement cell provides training on respective areas, catering to the interest of each individual student through aptitude training by IITians, soft skill training by personalities from the industries, honing of technical skills by experts from the college & companies , alumni interactions and webinars that help provide the platform to become recruitment ready. Mock  interviews, Group discussions, mock online tests are organised as and when required to enable students to understand their potential , learn and practice so as to tap the opportunities  provided.
+            </div>
+            <div class="content">
+                Our strong bonding with the Alumni, the staunch support of their expertise and experience and the glories of the past have made  quite a large number  of organisations knock at our doors to recruit our students.   We are continuously and cautiously upgrading the training modes and structure so as to be in par with the industrial standards, their expectations which ensures our students get placed in their interested arenas, work with dedication and job satisfaction paving way for a bright career for themselves, thereby achieving the vision and mission of the college.
+            </div>
+        </div>
+        <h3 >Upcoming drives</h3><br>
+        <div class="upcoming-drives">
+            
+            <div class="card">
+                <h4>Zoho</h4>
+                <p>Last date to apply </p><span>March 30,2022</span>
+                <p><a href="#">click here to apply</a></p>
+            </div>
+            <div class="card">
+                <h4>Wipro</h4>
+                <p>Last date to apply </p><span>March 30,2022</span>
+                <p><a href="#">click here to apply</a></p>
+            </div>
+            <div class="card">
+                <h4>Karomi</h4>
+                <p>Last date to apply </p><span>March 30,2022</span>
+                <p><a href="#">click here to apply</a></p>
+            </div>
+            <div class="card">
+                <h4>Capegemini</h4>
+                <p>Last date to apply </p><span>March 30,2022</span>
+                <p><a href="#">click here to apply</a></p>
+            </div>
+        </div>
+        <br>
+        <h3 >Placement records</h3><br>
+        <div class="placement-record">
+            <h4 style="text-align: center;">CAMPUS RECRUITMENT - 2022 BATCH</h4>
+        <table >
+            <tbody  id="table">
+                <tr>
+                    <th>S.No</th>
+                    <th>Name of the Company</th>
+                    <th>ECE</th>
+                    <th>CSE</th>
+                    <th>EEE</th>
+                    <th>MECH</th>
+                    <th>CIVIL</th>
+                </tr>
+            </tbody>
+            
+            
+            <!-- <tr>
+                <td>1</td>
+                <td>A</td>
+                <td class="ece">3</td>
+                <td class="cse">4</td>
+                <td class="eee">1</td>
+                <td class="mech">0</td>
+                <td class="civil">1</td>
+            </tr> -->
+            <!-- <tr>
+                <td>2</td>
+                <td>B</td>
+                <td class="ece">3</td>
+                <td class="cse">4</td>
+                <td class="eee">1</td>
+                <td class="mech">5</td>
+                <td class="civil">0</td>
+            </tr> -->
+            <tr>
+                <th colspan="2">TOTAL STUDENTS PLACED</th>
+                
+                <th class="totalece"></th>
+                <th class="totalcse"></th>
+                <th class="totaleee"></th>
+                <th class="totalmech"></th>
+                <th class="totalcivil"></th>
+            </tr>
+        </table>
+        </div>
+        <br>
+        <h3 >Student's Feedback</h3>
+        <div class="feedback-container">
+            <div class="feedback">
+                <p>Name of the student : <span>A</span></p>
+                <p>Department : <span>ECE</span></p>
+                <p>Company Placed : <span>AA</span></p>
+                <p>Salary : <span>4.2 LPA</span></p>
+                <a href="https://drive.google.com/file/d/13czuZ3QpK7SUl9i0ED9QNZrS-6N3KNcH/view">https://drive.google.com/file/d/13czuZ3QpK7SUl9i0ED9QNZrS-6N3KNcH/view</a>
+            </div><br>
+            <div class="feedback">
+                <p>Name of the student : <span>B</span></p>
+                <p>Department : <span>CSE</span></p>
+                <p>Company Placed : <span>BB</span></p>
+                <p>Salary : <span>4.5 LPA</span></p>
+                <a href="https://drive.google.com/file/d/13czuZ3QpK7SUl9i0ED9QNZrS-6N3KNcH/view">https://drive.google.com/file/d/13czuZ3QpK7SUl9i0ED9QNZrS-6N3KNcH/view</a>
+            </div>
+        </div>
+        <br>
+        <h3 >Placement officer's </h3>
+        <div class="placement-officers">
+            <div class="profile-card">
+                <img src="./Images/avatar.png" width="40%" alt="">
+                <h2>Dr. Hyacinth Suganthi</h2>
+                <h4>Placement Co-ordinator</h4>
+                <h5>Contact: sample@gmail.com</h5>
+                
+            </div>
+            <div class="profile-card">
+                <img src="./Images/avatar.png" width="40%" alt="">
+                <h2>Dr.K.Baskaran</h2>
+                <h4>Placement Officer</h4>
+                <h5>Contact: sample@gmail.com</h5>
+            </div>
+        </div><br>
+    </div>
+        <footer>
+            <h5>Contact us</h5>
+            <p>Alagappa Chettiar Government College of Engineering and Technology,
+                Karaikudi-630003.
+                Sivagangai, Tamilnadu.
+                Ph : 04565 224528, 224535</p>
+        </footer>
+    
+        <!-- <script src="./script.js"></script> -->
+        <script>
+           function myfunction(){
+                const arr = [{company:"A",ECE:"3",CSE:"2",EEE:"1",MECH:"1",CIVIL:"0"},{company:"B",ECE:"2",CSE:"3",EEE:"2",MECH:"1",CIVIL:"1"}];
+                let table = document.getElementById("table");
+                for(let i=0;i<arr.length;i++){
+                    table.innerHTML+="<tr> <td>"+ `${i+1}` +"</td><td>"+ arr[i].company+"</td><td class='ece'>"+ arr[i].ECE+"</td><td class='cse'>"+arr[i].CSE+"</td><td class='eee'>"+ arr[i].EEE+"</td><td class='mech'>"+ arr[i].MECH+"</td><td class='civil'>"+ arr[i].CIVIL+"</td></tr>";
+                }
+                
+                let tEce=tCse=tEee=tMech=tCivil=0;
+                let Arrayece = document.querySelectorAll(".ece");
+                let Arraycse = document.querySelectorAll(".cse");
+                let Arrayeee = document.querySelectorAll(".eee");
+                let Arraymech = document.querySelectorAll(".mech");
+                let Arraycivil= document.querySelectorAll(".civil");
+                for(let i=0;i<Arrayece.length;i++){
+                    tEce+=Number(Arrayece[i].innerHTML);
+                }
+                document.querySelector(".totalece").innerHTML=tEce;
+
+                for(let i=0;i<Arraycse.length;i++){
+                    tCse+=Number(Arraycse[i].innerHTML);
+                }
+                document.querySelector(".totalcse").innerHTML=tCse;
+
+                for(let i=0;i<Arrayeee.length;i++){
+                    tEee+=Number(Arrayeee[i].innerHTML);
+                }
+                document.querySelector(".totaleee").innerHTML=tEee;
+
+                for(let i=0;i<Arraymech.length;i++){
+                    tMech+=Number(Arraymech[i].innerHTML);
+                }
+                document.querySelector(".totalmech").innerHTML=tMech;
+
+                for(let i=0;i<Arraycivil.length;i++){
+                    tCivil+=Number(Arraycivil[i].innerHTML);
+                }
+                document.querySelector(".totalcivil").innerHTML=tCivil;
+                }
+        </script>
+</body>
+</html>

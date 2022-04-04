@@ -1,0 +1,283 @@
+.body{
+  margin: 0% 20%;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.img-container{
+  text-align: end;
+  width: 90%;
+}
+.logo{
+  width: 70%;
+}
+.admit-btn,.student-btn{
+  padding: 8px 2px;
+    
+}
+.btn{
+  padding: 12px 8px;
+  color: white;
+  background-color: #275eaf;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #052657; 
+}
+.buttons-container{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  text-align: end;
+  align-items: flex-end;
+}
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.contains {
+  padding: 16px;
+}
+.mySlides {display: none}
+.carousel {vertical-align: middle;}
+/*marquee*/
+marquee{
+  font-weight: bold;
+  font-size: large;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -22px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+/*contents container*/
+h3{
+  
+  color: #1407cc;
+}
+.content-container{
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  font-size: medium;
+  padding: 8px 2px;
+  color: rgba(0, 0, 0, 0.699);
+}
+/* upcoming drives*/
+.upcoming-drives{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+
+.card a {
+    padding: 5px;
+    color: white;
+    background-color: rgb(40, 59, 228);
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+/*placement records*/
+
+table{
+    border: 1px solid rgba(0, 0, 0, 0.479);
+    text-align: center;
+    width: 100%;
+}
+td,tr{
+    border: 1px solid rgba(0, 0, 0, 0.479);
+}
+  th{
+    padding: 10px;
+    background-color: rgb(10, 71, 61);
+    color: white;
+    font-size: medium;
+}
+/*feedback container */
+.feedback{
+    background-color: aliceblue;
+    padding: 10px;
+    overflow: visible;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.feedback p{
+    font-size: medium;
+}
+/*placement officer*/
+.placement-officers{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+.profile-card{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 300px;
+margin: auto;
+text-align: center;
+}
+.profile-card a{
+  text-decoration: none;
+  background-color: #000;
+  width: 100%;
+  padding: 12px 16px;
+  color:white;
+}
+/*footer*/
+footer{
+  padding: 12px 20px;
+  background-color: rgb(29, 28, 28);
+  color: white;
+}
+/*ADD DRIVE*/
+.add-drive,.add-record{
+width: 120px;
+outline: 0;
+margin: 0;
+padding: 12px 14px;
+background-color: #1c60dd;
+color: white;
+border-radius: 8px;
+}
+.add-record{
+float: left;
+}
+.textbox{
+width: 100%;
+outline: 0;
+padding: 5px 2px;
+}
+.label{
+margin-top: 8px;
+}
+@media screen and (max-width: 1000px) {
+  .body{
+    margin: 0% ;
+  }
+  .feedback{
+    padding: 4px;
+    margin: 0;
+  }
+  .upcoming-drives{
+    grid-template-columns: auto auto;
+  }
+  .logo{
+    width: 100%;
+    padding: 5px;
+  }
+  /* .btn{
+    width: 100%;
+  }
+  .buttons-container{    
+    width: 100%;
+  } */
+  .img-container{
+    text-align: center;
+    width: 100%;
+  }
+  .btn{
+    padding: 2px 4px;
+  }
+}
