@@ -42,7 +42,7 @@
             height: 450px;
             overflow: scroll;
         }
-        .selector{
+        .selector,input{
             padding: 6px 4px;
             border: 0;
             outline: 0;
@@ -53,6 +53,9 @@
             font-weight: bold;
             cursor: pointer;
         }
+        input{
+            color: black;
+        }
         option{
             background-color: rgba(6, 80, 6, 0.582);
         }
@@ -60,9 +63,12 @@
             text-align: center;
             color: maroon;
         }
+        input{
+            background-color: lightgray;
+        }
     </style>
 </head>
-<body>
+<body onload="insertRecord()">
     <h2>Student's Record</h2>
     <div class="filter">
         <select class="selector" name="year" id="year"  onchange="yearSortFunction()">
@@ -81,35 +87,41 @@
             <option value="CIVIL">CIVIL</option>
             <option value="ALL"> Select All</option>
         </select>
+        <input type="text" placeholder="Search for names..." id="nameSearch" onkeyup="searchByName()">
     </div>
-    <div class="container">
-    <table id="myTable">
-        <tr>
-            <th colspan="3">Register Number</th>
-            <th>Roll Number</th>
-            <th>Name</th>
-            <th>Programme</th>
-            <th>Department</th>
-            <th>Regulation</th>
-            <th>Year of Joining</th>
-            <th>Year of Study</th>
-            <th>Gender</th>
-            <th class="dob">DOB</th>
-            <th>Blood Group</th>
-            <th>Mobile Number</th>
-            <th>Mail ID</th>
-            <th>Parent Name</th>
-            <th>Parent Mobile</th>
-            <th>Community</th>
-            <th>10th Percentage</th>
-            <th>12th Percentage</th>
-            <th>CGPA</th>
-            <th>Standing Arrears</th>
-            <th>History of Arrears</th>
-            <th>Aadhar Number</th>
-            <th>Address</th>
-        </tr>
-        <tr>
+    <div class="student-record-container">
+    <table  >
+        <tbody id="myTable">
+            <tr>
+                <th >Register Number</th>
+                <th>Roll Number</th>
+                <th>Name</th>
+                <th>Programme</th>
+                <th>Department</th>
+                <th>Regulation</th>
+                <th>Year of Joining</th>
+                <th>Year of Study</th>
+                <th>Gender</th>
+                <th class="dob">DOB</th>
+                <th>Blood Group</th>
+                <th>Mobile Number</th>
+                <th>Mail ID</th>
+                <th>Status</th>
+                <th>Parent Name</th>
+                <th>Parent Mobile</th>
+                <th>Community</th>
+                <th>10th Percentage</th>
+                <th>12th Percentage</th>
+                <th>CGPA</th>
+                <th>Standing Arrears</th>
+                <th>History of Arrears</th>
+                <th>Aadhar Number</th>
+                <th>Address</th>
+            </tr>
+        </tbody>
+        
+        
+        <!-- <tr>
             <td colspan="3">1814032</td>
             <td>18EC032</td>
             <td>StudentName 1</td>
@@ -158,220 +170,65 @@
             <td>no</td>
             <td>223344556677</td>
             <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814030</td>
-            <td>18EC030</td>
-            <td>StudentName 3</td>
-            <td>B.E</td>
-            <td class="dept">ECE</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">3</td>
-            <td>Male</td>
-            <td class="dob"> mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814032</td>
-            <td>18EC032</td>
-            <td>StudentName 2</td>
-            <td>B.E</td>
-            <td class="dept">CSE</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">2</td>
-            <td>Male</td>
-            <td class="dob">mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814032</td>
-            <td>18EC032</td>
-            <td>StudentName 2</td>
-            <td>B.E</td>
-            <td class="dept">CIVIL</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">4</td>
-            <td>Male</td>
-            <td class="dob">mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814032</td>
-            <td>18EC032</td>
-            <td>StudentName 2</td>
-            <td>B.E</td>
-            <td class="dept">MECH</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">3</td>
-            <td>Male</td>
-            <td class="dob">mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814032</td>
-            <td>18EC024</td>
-            <td>StudentName 7</td>
-            <td>B.E</td>
-            <td class="dept">EEE</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">4</td>
-            <td>Male</td>
-            <td class="dob">mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814047</td>
-            <td>18EC032</td>
-            <td>StudentName 8</td>
-            <td>B.E</td>
-            <td class="dept">CIVIL</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">3</td>
-            <td>Male</td>
-            <td class="dob">mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814047</td>
-            <td>18EC032</td>
-            <td>StudentName 8</td>
-            <td>B.E</td>
-            <td class="dept">EEE</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">3</td>
-            <td>Male</td>
-            <td class="dob">mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
-        <tr>
-            <td colspan="3">1814047</td>
-            <td>18EC032</td>
-            <td>StudentName 8</td>
-            <td>B.E</td>
-            <td class="dept">ECE</td>
-            <td>2015</td>
-            <td>2018</td>
-            <td class="year">2</td>
-            <td>Male</td>
-            <td class="dob">mm dd,yyyy</td>
-            <td>B+</td>
-            <td>992223332</td>
-            <td>sample@gmail.com</td>
-            <td>father name</td>
-            <td>887776655</td>
-            <td>AAA</td>
-            <td>90</td>
-            <td>90</td>
-            <td>8</td>
-            <td>0</td>
-            <td>no</td>
-            <td>223344556677</td>
-            <td>bsdcbhjbef ,evvrvrt,ergrrgtg,rfer3rtt-300303</td>
-        </tr>
+        </tr>-->
     </table>
     </div>
     <script>
+        function insertRecord(){
+            const arr=[{registerNumber:"1814030",rollNumber:"18EC030",name:"Manoj",programme:"B.E",dept:"ECE",regulation:"2015",yearOfJoining:"2018",yearOfStudy:"4",gender:"Male",dateOfBirth:"09-02-2001",
+            bloodGroup:"B+ve",mobileNumber:"9988776655",mail:"manoj@gmail.com", status:"Placed",parentName:"father name",parentMobile:"6677889955",community:"QQQ",tenthPercentage:"95",twelthPercentage:"93",
+            cgpa:"8",standingArrears:"0",historyOfArrears:"No",aadharNumber:"223344556677",address:"dhewfiwef infnf,nef,jodjeofjepo"},
+            {registerNumber:"1814032",rollNumber:"18EC032",name:"Nithish",programme:"B.E",dept:"CSE",regulation:"2015",yearOfJoining:"2018",yearOfStudy:"3",gender:"Male",dateOfBirth:"09-02-2001",
+            bloodGroup:"B+ve",mobileNumber:"9988776655",mail:"manoj@gmail.com",status:"Not Placed",parentName:"father name",parentMobile:"6677889955",community:"QQQ",tenthPercentage:"95",twelthPercentage:"93",
+            cgpa:"8",standingArrears:"0",historyOfArrears:"No",aadharNumber:"223344556677",address:"dhewfiwef infnf,nef,jodjeofjepo"}];
+            
+            let table = document.getElementById('myTable');
+           
+            // for(let i=0;i<arr.length;i++){
+            //     console.log(i + " time")
+            //     for(let x in arr[i]){
+                    
+            //         table.innerHTML+=`<td> ${arr[i][x]} </td>`;
+            //         console.log(table.innerHTML)
+            //     }
+            // }
+            for(let i=0;i<arr.length;i++){
+                table.innerHTML+="<tr><td>"+arr[i].registerNumber+"</td><td>"+arr[i].rollNumber+"</td><td class='studentName'>"+arr[i].name+"</td><td>"+arr[i].programme+"</td><td class='dept'>"+arr[i].dept+"</td><td>"+arr[i].regulation+"</td><td>"
+                +arr[i].yearOfJoining+"</td><td class='year'>"+arr[i].yearOfStudy+"</td><td>"+arr[i].gender+"</td><td>"+arr[i].dateOfBirth+"</td><td>"+arr[i].bloodGroup+"</td><td>"+arr[i].mobileNumber+"</td><td>"+arr[i].mail+"</td><td>"+arr[i].status+"</td><td>"
+                +arr[i].parentName+"</td><td>"+arr[i].parentMobile+"</td><td>"+arr[i].community+"</td><td>"+arr[i].tenthPercentage+"</td><td>"+arr[i].twelthPercentage+"</td><td>"+arr[i].cgpa+"</td><td>"+arr[i].standingArrears+"</td><td>"
+                +arr[i].historyOfArrears+"</td><td>" +arr[i].aadharNumber+"</td><td>"+arr[i].address+"</td></tr>"  
+            }
+        }
+        function searchByName(){
+            let input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("nameSearch");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByClassName("studentName")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }  
+        }
         function yearSortFunction() {
           // Declare variables
-          
-          var filter,filter2, table, tr, td,td2, i, txtValue,txtValue2;
-          filter = document.getElementById("year").value.toUpperCase();
-          filter2= document.getElementById("dept").value.toUpperCase();
+          console.log("fn executed");
+          let filter,filter2, table, tr, td,td2, i, txtValue,txtValue2;
+          filter = document.getElementById("year").value;
+          filter2= document.getElementById("dept").value;
           table = document.getElementById("myTable");
-          
+          console.log(filter,filter2)
           tr = table.getElementsByTagName("tr");
-          console.log(filter, filter2);
+          console.log("length of rows are "+tr.length)
          // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByClassName("year")[0];
@@ -389,35 +246,7 @@
                 
             }
         }
-        function deptSortFunction(){
-          var input, filter, table, tr, td, i, txtValue;
-          input = document.getElementById("dept");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("myTable");
-          tr = table.getElementsByTagName("tr");
-            console.log("NEW LINE");
-          // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByClassName("dept")[0];
-                if (td) {
-                    txtValue = td.textContent;
-                   
-                    if (txtValue== filter) {
-                        console.log("If executed")
-                        console.log("txtvalue="+txtValue+" filter="+filter)
-                        tr[i].style.display = "";
-                    }                   
-                    else{
-                        console.log("Else executed");
-                        console.log("txtvalue="+txtValue+" filter="+filter)
-                        tr[i].style.display = "none";
-                    }                    
-                }
-                if(filter=="ALL"){
-                    tr[i].style.display = "";
-                }
-            }
-        }
+        
     </script>
         
 </body>
